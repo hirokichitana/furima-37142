@@ -49,6 +49,7 @@
 ### Association
   belongs_to :item
   belongs_to :user
+  has_one :delivery_address
 
 
 
@@ -62,7 +63,8 @@
 | house_number       | string     | null: false                    |
 | building_name      | string     |                                |
 | telephone_number   | string     | null: false                    |
-| item               | references | null: false, foreign_key: true |
-| user               | references | null: false, foreign_key: true |
+| purchase           | references | null: false, foreign_key: true |
 
 ### Association
+
+  belongs_to :delivery_address
