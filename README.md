@@ -36,7 +36,6 @@
 
   belongs_to :user
   has_one :purchase
-  has_one :delivery_address
 
 
 
@@ -67,5 +66,3 @@
 | user               | references | null: false, foreign_key: true |
 
 ### Association
-
-  belongs_to :item
