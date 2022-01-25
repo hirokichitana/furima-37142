@@ -67,4 +67,4 @@
 
 ### Association
 
-  belongs_to :delivery_address
+  belongs_to :purchase
