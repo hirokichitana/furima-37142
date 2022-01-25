@@ -11,12 +11,11 @@
 | firstname_katakana | string  | null: false               |
 | birth_date         | date    | null: false               |
 
-
 ### Association
 
   has_many :items
   has_many :purchases
-  has_many :delivery_addresses
+
 
 
 ## items テーブル
@@ -40,6 +39,7 @@
   has_one :delivery_address
 
 
+
 ## purchases テーブル
 
 | Column           | Type       | Options                        |
@@ -50,6 +50,7 @@
 ### Association
   belongs_to :item
   belongs_to :user
+
 
 
 ## delivery_address テーブル
@@ -68,4 +69,3 @@
 ### Association
 
   belongs_to :item
-  belongs_to :user
