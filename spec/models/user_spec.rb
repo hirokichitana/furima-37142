@@ -81,6 +81,26 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birth date can't be blank")
       end
+      it 'lastname_emが漢字、ひらがな、カタカナ以外では登録出来ない' do
+        @user.lastname_em = 'test'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Lastname em is invalid")
+      end
+      it 'firstname_emが漢字、ひらがな、カタカナ以外では登録出来ない' do
+        @user.firstname_em = 'test'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Firstname em is invalid")
+      end
+      it 'lastname_katakanaがカタカナ以外では登録出来ない' do
+        @user.lastname_katakana = 'てすと'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Lastname katakana is invalid")
+      end
+      it 'firstname_katakanaがカタカナ以外では登録出来ない' do
+        @user.firstname_katakana = 'てすと'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Firstname katakana is invalid")
+      end
     end
   end
 end
