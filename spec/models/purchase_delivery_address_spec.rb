@@ -75,6 +75,16 @@ RSpec.describe PurchaseDeliveryAddress, type: :model do
         @purchase_delivery_address.valid?
         expect(@purchase_delivery_address.errors.full_messages).to include("Token can't be blank")
       end
+      it 'userが紐付いていないと保存できないこと' do
+        @purchase_delivery_address.user_id = ''
+        @purchase_delivery_address.valid?
+        expect(@purchase_delivery_address.errors.full_messages).to include("User can't be blank")
+      end
+      it 'itemが紐付いていないと保存できないこと' do
+        @purchase_delivery_address.item_id = ''
+        @purchase_delivery_address.valid?
+        expect(@purchase_delivery_address.errors.full_messages).to include("Item can't be blank")
+      end
     end
   end
 end
