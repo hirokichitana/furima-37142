@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   belongs_to :lead_time
 
   belongs_to :user
+  has_one :purchase
+
   has_one_attached :image
 
   validates :image, presence: true
