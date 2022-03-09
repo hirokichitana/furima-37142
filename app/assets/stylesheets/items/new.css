@@ -227,3 +227,38 @@
 .inc {
   font-size: 13px;
 }
+
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+#previews {
+  display: flex;
+}
+
+.preview{
+  margin-right: 30px;
+}
+
+.other-images {
+  display: flex;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+
+.preview-image {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.other-item-img{
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
