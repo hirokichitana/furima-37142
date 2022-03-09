@@ -9,9 +9,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
 
-  has_one_attached :image
+  has_many_attached :images
 
-  validates :image, presence: true
+  validates :images, presence: true
   validates :title, :explanation, presence: true
   validates :price, presence: true, numericality: { greater_than: 299, less_than: 10_000_000 }
 
@@ -20,4 +20,5 @@ class Item < ApplicationRecord
   validates :delivery_fee_id, numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :lead_time_id, numericality: { other_than: 1 }
+  validates :images, length: { minimum: 1, maximum: 5 }
 end
