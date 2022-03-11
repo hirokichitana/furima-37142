@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
 
   describe '商品出品' do
     context '商品出品できるとき' do
-      it 'image,title,explanation,category_id,condition_id,delivery_fee_id,prefecture_id,lead_time_id,price,が存在すれば登録できる' do
+      it 'images,title,explanation,category_id,condition_id,delivery_fee_id,prefecture_id,lead_time_id,price,が存在すれば登録できる' do
         expect(@item).to be_valid
       end
     end
@@ -59,9 +59,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'imageが空では登録できない' do
-        @item.image = nil
+        @item.images = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")
+        expect(@item.errors.full_messages).to include("Images can't be blank")
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
@@ -71,12 +71,12 @@ RSpec.describe Item, type: :model do
       it '商品価格が299円以下では出品できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be greater than 300')
+        expect(@item.errors.full_messages).to include('Price must be greater than 299')
       end
       it '商品価格が10_000_000円以上では出品できない' do
         @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be less than 9999999')
+        expect(@item.errors.full_messages).to include('Price must be less than 10000000')
       end
     end
   end
