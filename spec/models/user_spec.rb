@@ -15,12 +15,12 @@ RSpec.describe User, type: :model do
       it 'nicknameが空では登録できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
       it '重複したemailが存在する場合は登録できない' do
         @user.save
@@ -37,12 +37,12 @@ RSpec.describe User, type: :model do
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'passwordとpassword_confirmationが不一致では登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
       it 'passwordは半角英数字混合でなければ登録できない' do
         @user.password = '123456'
@@ -59,27 +59,27 @@ RSpec.describe User, type: :model do
       it 'lastname_emが空では登録出来ない' do
         @user.lastname_em = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("名字(全角)を入力してください")
+        expect(@user.errors.full_messages).to include('名字(全角)を入力してください')
       end
       it 'firstname_emが空では登録出来ない' do
         @user.firstname_em = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("名前(全角)を入力してください")
+        expect(@user.errors.full_messages).to include('名前(全角)を入力してください')
       end
       it 'lastname_katakanaが空では登録出来ない' do
         @user.lastname_katakana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("名字(カタカナ)を入力してください")
+        expect(@user.errors.full_messages).to include('名字(カタカナ)を入力してください')
       end
       it 'firstname_katakanaが空では登録出来ない' do
         @user.firstname_katakana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("名前(カタカナ)を入力してください")
+        expect(@user.errors.full_messages).to include('名前(カタカナ)を入力してください')
       end
       it 'birth_dateが空では登録出来ない' do
         @user.birth_date = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("生年月日を入力してください")
+        expect(@user.errors.full_messages).to include('生年月日を入力してください')
       end
       it 'lastname_emが漢字、ひらがな、カタカナ以外では登録出来ない' do
         @user.lastname_em = 'test'
