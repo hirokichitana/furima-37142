@@ -22,10 +22,14 @@ crumb :items_new do
   parent :root
 end
 
-crumb :items_show do
-  link "商品詳細", item_path(current_user.id)
-  parent :root
-end
+
+  crumb :items_show do
+    link "商品詳細", item_path(current_user.id)
+    parent :root
+  end
+
+
+
 
 crumb :purchases_index do
   link "商品の購入", item_purchases_path
